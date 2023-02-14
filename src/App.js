@@ -4,7 +4,7 @@ import { useState } from 'react'
 // A function to make requests to our Workers API using a query
 const getImages = async query => {
   // The base URL for our API
-  const url = "https://workers-unsplash-api.signalnerve.workers.dev"
+  const url = "https://serverless_reactapp.anmolmunnolli.workers.dev"
 
   const resp = await fetch(url, {
     // Send a POST request
@@ -17,7 +17,6 @@ const getImages = async query => {
   })
   return resp.json()
 }
-
 function App() {
   // Store the query that we'll search for in a simple useState hook
   const [query, setQuery] = useState("")
@@ -36,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <div class="form">
+      <div className="form">
         <input id="query" type="text" onChange={updateQuery} placeholder="Search query" />
         <button onClick={search}>Search</button>
       </div>
